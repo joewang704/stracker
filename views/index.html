@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <script>
+        var socket = io('http://localhost:8080');
+          socket.on('news', function (data) {
+            console.log(data);
+            document.getElementById('content').innerHTML = data;
+          });
+    </script>
+  </head>
+  <body>
+    <div class='container'>
+      <div id='content'></div>
+    </div>
+  </body>
+</html>
